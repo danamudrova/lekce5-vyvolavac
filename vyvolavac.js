@@ -43,12 +43,26 @@ function tahnoutJmeno() {
     // Vyřadíme vylosované jméno z osudí
     jmena.splice(vyherniIndex, 1);
 
-    // Výherní jméno si uložíme do pole k ostatním výherním
-    tazenaJmena.push(vyherniJmeno);
+    // úkol 1 (vylosované jméno na začátek řady)
+    tazenaJmena.unshift(vyherniJmeno);
 
     let vyherce = document.querySelector('#vyherka');
     vyherce.textContent = vyherniJmeno;
 
     let seznam = document.querySelector('#seznam');
     seznam.textContent = tazenaJmena;
+
+    // zavolání funkce  úkolu 2 
+    pocet();
+}
+
+// úkol 2 (počítadlo)
+let  pocitadlo = 1
+function pocet(){
+	document.getElementById('score').innerText = pocitadlo++;
+}
+
+// úkol 3 (restart aplikace)
+function zacniZnovu(){ 
+    location.reload();
 }
